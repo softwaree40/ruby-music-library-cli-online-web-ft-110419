@@ -5,7 +5,8 @@ class Artist
       @name= name 
       save 
       @songs =[]
-      @artist = artist 
+      @artist = artist
+      @song = song
       
    end
    def self.all 
@@ -23,6 +24,11 @@ class Artist
      #binding.pry 
     
   end
-   
+   def add_song(song)
+      @@all.detect  do |artist|
+        song.artist = artist 
+        artist 
+      end
+   end
   
 end

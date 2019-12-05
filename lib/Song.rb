@@ -6,6 +6,7 @@ class Song
       @name= name
       save
       @songs = []
+      @artist = artist
       
    end
    def self.all            #class method 
