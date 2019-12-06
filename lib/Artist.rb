@@ -25,9 +25,9 @@ class Artist
     
   end
    def add_song(song)
-      song.artist = self 
-      @songs << self 
-      self unless song.artist 
+      song.artist = self if !song.artist
+      self.songs << song if !self.songs.include?(song)
+  
        
        binding.pry
    end
