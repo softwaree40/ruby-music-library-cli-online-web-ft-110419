@@ -1,24 +1,36 @@
 class Genre
-   @@all = []
-   attr_accessor:name,:song 
-   def initialize(name)
-      @name= name 
-      save 
-   end
-   def self.all 
-    @@all 
+  extend Concerns::Findable
+  attr_accessor :name
+  attr_reader :songs
+
+  @@all = []
+
+  def initialize(name)
+    @name = name
+    @songs = []
   end
-  def self.destroy_all
-    @@all.clear
-  end
+
   def save
-     @@all << self 
-    
+    self.class.all << self
   end
+
+  def artists
+    self.songs.collect do |song|
+      song.artist
+    end.uniq
+  end
+
+  def self.all
+    @@all
+  end
+
   def self.create(name)
-      Genre.new(name) 
-     #binding.pry 
-    
+    genre = self.new(name)
+    genre.save
+    genre
   end
-  
+
+  def self.destroy_all
+    self.all.clear
+  end
 end
