@@ -5,7 +5,7 @@ class Artist
       @name= name 
       save 
       @songs =[]
-      @artist = artist
+      @artist = []
       @song = song
       
    end
@@ -28,7 +28,7 @@ class Artist
       song.artist = self if !song.artist
       
       self.songs << song  if !self.songs.include?(song)
-      
+      @artist << self
     #binding.pry
    end
   
