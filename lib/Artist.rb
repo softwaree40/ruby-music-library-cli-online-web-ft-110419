@@ -29,7 +29,7 @@ class Artist
       @songs << self 
       self unless song.artist 
        
-       #binding.pry
+       binding.pry
    end
   
 end
