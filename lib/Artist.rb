@@ -25,10 +25,10 @@ class Artist
     
   end
    def add_song(song)
-      @@all.detect  do |artist|
-        song.artist = artist 
-        artist 
-      end
+      song.artist = self 
+      self unless song.artist 
+       
+       
    end
   
 end
