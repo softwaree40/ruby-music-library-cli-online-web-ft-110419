@@ -29,7 +29,7 @@ class Artist
       
       self.songs << song  if !self.songs.include?(song)
       
-    binding.pry
+    #binding.pry
    end
   
 end
