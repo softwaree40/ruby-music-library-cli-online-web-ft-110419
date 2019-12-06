@@ -28,7 +28,7 @@ class Artist
       song.artist = self 
       self unless song.artist 
        
-       
+       binding.pry
    end
   
 end
